@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+作者:汪阳
+部门:计算机应用开发室
+联系:0553-8399022
+时间:2017/5/19
+说明:
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>wyJquery</title>
+    <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../build/wyJquery.js"></script>
+    <script>
+        var json = [
+            {
+                id:1,
+                name:"Chris",
+                age:false
+            },
+            {
+                id:2,
+                name:"Vivian",
+                age:true
+            },
+            {
+                id:3,
+                name:"Laura",
+                age:false
+            },
+            {
+                id:4,
+                name:"Dim",
+                age:true
+            }
+        ];
+
+        var option = {
+            json:json,
+            columns:[
+                {
+                    id:"id",
+                    name:"编号",
+                    style:"width:100px",
+                    format:function(item){
+                        return "编号："+item;
+                    }
+                },
+                {
+                    id:"name",
+                    name:"名称",
+                },
+                {
+                    id:"age",
+                    name:"性别",
+                    format:function(item){
+                        return item==true?"男":"女";
+                    }
+                },
+            ]
+        };
+
+        $(function(){
+            $("table").wyTable(option);
+        });
+    </script>
+</head>
+<body>
+<div>
+
+    <ul>
+        <li>
+            演示
+            <table class="table"></table>
+        </li>
+        <li>
+            数据源
+            <pre>
+            var json = [
+                            {
+                                id:1,
+                                name:"Chris",
+                                age:false
+                            },
+                            {
+                                id:2,
+                                name:"Vivian",
+                                age:true
+                            },
+                            {
+                                id:3,
+                                name:"Laura",
+                                age:false
+                            },
+                            {
+                                id:4,
+                                name:"Dim",
+                                age:true
+                            }
+                        ]
+            </pre>
+        </li>
+        <li>
+            参数
+            <pre>
+            var option = {
+                            columns:[
+                                  {
+                                    id:"id",
+                                    name:"编号",
+                                    style:"width:100px",
+                                    format:function(item){
+                                        return "编号："+item;
+                                    }
+                                  },
+                                  {
+                                    id:"name",
+                                    name:"名称",
+                                    style:"width:100px"
+                                  },
+                                  {
+                                    id:"age",
+                                    name:"性别",
+                                    style:"width:100px",
+                                    format:function(item){
+                                        return item==true?"男":"女";
+                                    }
+                                  },
+                            ]
+                      };
+            </pre>
+        </li>
+        <li>
+            使用
+            <pre>
+                $("table").wyGrid(option);
+            </pre>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
